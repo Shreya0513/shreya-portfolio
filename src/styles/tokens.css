@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Design Tokens — single source of truth.
+   Semantic layer is what components consume; raw scales exist only to feed it.
+   Swapping :root values here (or via [data-theme]) re-themes the entire app,
+   which is what makes a future runtime Theme Studio possible.
+   ========================================================================== */
+
+:root {
+  /* ---- Accent (single restrained family — indigo -> violet -> cyan) ---- */
+  --accent-indigo: #4f46e5;
+  --accent-violet: #6d5ef9;
+  --accent-cyan: #06b6d4;
+  --accent-gradient: linear-gradient(
+    135deg,
+    var(--accent-indigo) 0%,
+    var(--accent-violet) 45%,
+    var(--accent-cyan) 100%
+  );
+
+  /* ---- Neutral grayscale (warm-neutral, not pure gray) ---- */
+  --gray-0: #ffffff;
+  --gray-25: #fcfcfd;
+  --gray-50: #f8f9fb;
+  --gray-100: #f1f2f5;
+  --gray-150: #e7e9ee;
+  --gray-200: #dcdee4;
+  --gray-300: #c3c6cf;
+  --gray-400: #9da1ac;
+  --gray-500: #767a87;
+  --gray-600: #565a66;
+  --gray-700: #3d404a;
+  --gray-800: #262830;
+  --gray-900: #16171c;
+  --gray-950: #0b0b0e;
+
+  /* ---- Semantic (components reference ONLY these) ---- */
+  --color-bg: var(--gray-0);
+  --color-bg-subtle: var(--gray-25);
+  --color-bg-elevated: #ffffff;
+  --color-surface-glass: rgba(255, 255, 255, 0.65);
+  --color-border: var(--gray-150);
+  --color-text-primary: var(--gray-900);
+  --color-text-secondary: var(--gray-600);
+  --color-text-tertiary: var(--gray-400);
+  --color-accent: var(--accent-indigo);
+  --color-accent-gradient: var(--accent-gradient);
+  --color-focus-ring: var(--accent-violet);
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-on-accent: #ffffff;
+
+  /* ---- Typography ---- */
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono-token: var(--font-geist-mono), ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --leading-xs: 1rem;
+  --text-sm: 0.875rem;
+  --leading-sm: 1.35rem;
+  --text-base: 1rem;
+  --leading-base: 1.6rem;
+  --text-lg: 1.125rem;
+  --leading-lg: 1.7rem;
+  --text-xl: 1.375rem;
+  --leading-xl: 1.8rem;
+  --text-2xl: 1.75rem;
+  --leading-2xl: 2.2rem;
+  --text-3xl: 2.25rem;
+  --leading-3xl: 2.6rem;
+  --text-4xl: 3rem;
+  --leading-4xl: 3.4rem;
+  --text-5xl: 3.75rem;
+  --leading-5xl: 1.05;
+  --text-6xl: 4.75rem;
+  --leading-6xl: 1.02;
+
+  --tracking-heading: -0.02em;
+  --tracking-body: 0em;
+  --tracking-label: 0.04em;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* ---- Shadow ---- */
+  --shadow-xs: 0 1px 2px rgba(16, 17, 20, 0.04);
+  --shadow-sm: 0 2px 8px rgba(16, 17, 20, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 17, 20, 0.08);
+  --shadow-lg: 0 16px 48px rgba(16, 17, 20, 0.1);
+  --shadow-glow-accent: 0 0 40px rgba(79, 70, 229, 0.18);
+
+  /* ---- Glass ---- */
+  --glass-blur: 20px;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-saturate: 180%;
+
+  /* ---- Topic accents (nav card icons) ---- */
+  --color-topic-me: #0d9488;
+  --color-topic-projects: #16a34a;
+  --color-topic-skills: #7c3aed;
+  --color-topic-fun: #db2777;
+  --color-topic-contact: #b45309;
+
+  /* ---- Brand accents (contact/link cards) ---- */
+  --color-brand-email: var(--accent-indigo);
+  --color-brand-github: #18181b;
+  --color-brand-linkedin: #0a66c2;
+  --color-brand-leetcode: #f59e0b;
+  --color-brand-resume: var(--accent-violet);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+  --duration-cursor: 600ms;
+
+  /* ---- Spring presets (Framer Motion `type: "spring"` transitions) ---- */
+  --spring-snappy-stiffness: 420;
+  --spring-snappy-damping: 32;
+  --spring-soft-stiffness: 220;
+  --spring-soft-damping: 26;
+  --spring-float-stiffness: 60;
+  --spring-float-damping: 14;
+
+  /* ---- Dock (floating nav) ---- */
+  --dock-bg: rgba(255, 255, 255, 0.72);
+  --dock-blur: 24px;
+  --dock-saturate: 200%;
+  --dock-shadow: 0 12px 40px rgba(16, 17, 20, 0.14), 0 2px 8px rgba(16, 17, 20, 0.06);
+  --dock-radius: var(--radius-full);
+
+  /* ---- Overlay (Dialog / skill + project detail panels) ---- */
+  --overlay-scrim: rgba(11, 11, 14, 0.4);
+  --overlay-bg: var(--color-bg-elevated);
+  --overlay-radius: var(--radius-xl);
+  --overlay-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] {
+  --color-bg: var(--gray-950);
+  --color-bg-subtle: var(--gray-900);
+  --color-bg-elevated: var(--gray-900);
+  --color-surface-glass: rgba(20, 20, 24, 0.65);
+  --color-border: var(--gray-800);
+  --color-text-primary: var(--gray-50);
+  --color-text-secondary: var(--gray-300);
+  --color-text-tertiary: var(--gray-500);
+  --glass-bg: rgba(20, 20, 24, 0.65);
+  --dock-bg: rgba(20, 20, 24, 0.72);
+  --overlay-scrim: rgba(0, 0, 0, 0.6);
+}
